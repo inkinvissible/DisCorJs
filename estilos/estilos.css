@@ -325,11 +325,39 @@ p {
 .h3Clientes {
   margin-top: 20px; }
 
-.mainAreaClientes {
-  height: 68vh; }
-  .mainAreaClientes section .vidPrograma {
+.mainAreaClientes section .vidPrograma {
+  display: flex;
+  justify-content: center; }
+
+#productos {
+  margin-top: 45px; }
+
+.separar {
+  display: flex;
+  justify-content: space-between; }
+
+.carta {
+  margin-top: 25px;
+  background-color: #bada55;
+  color: #000;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center; }
+  .carta div img {
+    width: 100%;
+    overflow: scroll; }
+  .carta div div {
     display: flex;
     justify-content: center; }
+    .carta div div .btnCompra {
+      background-color: #646363;
+      color: #FFFBDB;
+      font-weight: bold;
+      height: 37px;
+      width: 35%;
+      border-radius: 20px;
+      padding: 5px;
+      text-align: center; }
 
 /*****************/
 /*Nuestra Empresa*/
