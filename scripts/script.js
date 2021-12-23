@@ -9,24 +9,45 @@ class Usuario {
     verificacion() {
         while ((!this.email.includes("@")) && (!this.email.includes(".com"))) {
             alert("Su email es inválido");
-            this.email=prompt("Ingrese nuevamente su email");
+            this.email = prompt("Ingrese nuevamente su email");
         }
 
     }
     getDatos() {
-        alert("Sus datos son: " + this.nombre + "\n" + this.apellido + "\n" + this.telefono + "\n" + this.email);
+        alert("Sus datos finales ingresados son: " + this.nombre + "\n" + this.apellido + "\n" + this.telefono + "\n" + this.email);
+    }
+    toString() {
+        return "El nombre del usuario es: " + this.nombre + ". El apellido es: " + this.apellido + ". El teléfono es: " + this.telefono + ". El email es: " + this.email + "\n";
     }
 }
 alert("Le pediremos que ingrese sus datos");
-const usuario1 = new Usuario(
-    prompt("Ingrese su nombre"),
-    prompt("Ingrese su apellido"),
-    prompt("Ingrese su teléfono"),
-    prompt("Ingrese su Email")
-);
-usuario1.verificacion();
-usuario1.getDatos();
 
+const userArray = [];
+let quantity = 0;
+for (let index = 0; index <= quantity; index++) {
+    userArray[index] = new Usuario(
+        prompt("Ingrese su nombre"),
+        prompt("Ingrese su apellido"),
+        prompt("Ingrese su teléfono"),
+        prompt("Ingrese su Email")
+    );
+    userArray[index].verificacion();
+    userArray[index].getDatos();
+
+}
+alert(userArray.toString());
+const filtro = (name) =>{
+    name=name.toLowerCase();
+    const encontrado=userArray.find(elemento => elemento === name);
+    if (encontrado==undefined){
+        alert("No se ha encontrado al usuario");
+    }else{
+        alert("Sí, el usuario está en su base de datos");
+        
+    }
+}
+
+filtro(prompt("Ingrese el usuario que se quiere buscar"));
 
 
 const productoSelected = (producto) => {
