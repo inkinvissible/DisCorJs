@@ -1,4 +1,4 @@
-class Usuario {
+/*class Usuario {
     constructor(nombre, apellido, telefono, email) {
         this.nombre = nombre.toLowerCase();
         this.apellido = apellido.toLowerCase();
@@ -117,6 +117,37 @@ const comprobacion = (seleccion) => {
 
 comprobacion(productoSelected(prompt("Escriba los productos. Los productos son los siguientes \n1. Manijas \n2. Máquinas\n3.Cerraduras")));
 
+*/
 
+
+class Producto {
+    constructor(id, descripcion) {
+        this.id = id;
+        this.descripcion = descripcion;
+    }
+}
+let productos = [];
+
+productos.push(new Producto("751100", "Manija"));
+productos.push(new Producto("851100", "Manija"));
+productos.push(new Producto("751200", "Manija"));
+productos.push(new Producto("753100", "Manija"));
+let section = document.querySelector('.row.separar.container-fluid');
+
+for (const producto of productos) {
+    let article = document.createElement("article");
+    article.className = "articulo col col-12 col-md-6 col-lg-4 carta"
+    article.innerHTML = `<div>
+                            <img src="../imagenes/ft-nosotros.jpg" class="img-fluid" alt="Imagen de Producto">
+                            <h3 class="codigo">${producto.id}</h3>
+                            <p class="descripcion">${producto.descripcion}</p>
+    
+                            <div>
+                                <a href="" class="btnCompra">Agregar al Carrito</a>
+                            </div>
+                        </div>`;
+    // Agregar a sección y no al documento
+    section.appendChild(article);
+}
 
 
